@@ -1,6 +1,24 @@
 const enhancer = require('./enhancer.js');
+
 // test away!
-test('runs the test', () => {
-    //assertions
-    expect(true).toBe(true)
+
+describe('the repair function', () => {
+    it('restore durability to 100', () => {
+
+    })
+
+})
+
+
+describe('the succeed function', () => {
+    it('modifiy item according to enhancement success', () => {
+        
+    })
+    
+})
+
+describe('the fail function', () => {
+    it('modifiy item according to enhancement failure', () => {
+
+    
 })
