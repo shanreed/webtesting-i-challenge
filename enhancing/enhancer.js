@@ -6,6 +6,7 @@ module.exports = {
 };
 
 function succeed(item) {
+  if (item.enhancement)
   return { ...item };
 }
 
@@ -14,7 +15,8 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  const repairItem = {name: item.name , durability: 100, enhancement:item.enhancement}
+  return repairItem;
 }
 
 function get(item) {
