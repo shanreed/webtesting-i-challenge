@@ -6,8 +6,13 @@ module.exports = {
 };
 
 function succeed(item) {
-  if (item.enhancement)
-  return { ...item };
+  if (item.enhancement === 20) {
+    const noEnhancement = {name:item.name, durability: item.durability, enhancement: item.enhancement}
+  return noEnhancement;
+} else {
+  const enhancedItem = {name:item.name, durability: item.durability, enhancement: item.enhancement + 1}
+  return enhancedItem;
+}
 }
 
 function fail(item) {
