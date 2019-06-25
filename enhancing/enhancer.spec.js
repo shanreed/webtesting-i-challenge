@@ -19,7 +19,7 @@ describe('repair()', () => {
 })
 
 
-describe('succeed', () => {
+describe('succeed()', () => {
     it('enhance item by 1', () => {
         const enhanceItem = {name: 'crash', durability: 100, enhancement: 5}
         const expected = {name: 'crash', durability: 100, enhancement: 6}
@@ -36,8 +36,28 @@ describe('succeed', () => {
     
 })
 
-// describe('the fail function', () => {
-//     it('modifiy item according to enhancement failure', () => {
+describe('fail()', () => {
+    it('If enhancement is less than 15, the durability should be decreased by 5', () => {
+        //arrange
+        const failedItem = {name: 'crash', durability: 60, enhancement: 11}
+        const expected = {name: 'crash', durability: 55, enhancement: 11}
+        const below15Fail = fail(failedItem)
+        //assert
+        expect(below15Fail).toEqual(expected) 
+        });
+        it("if enhancement is 15 or more decrease durability by 10 ", () => {
+            const failedItem2 = {name: 'crash', durability: 60, enhancement: 15}
+            const expected = {name: 'crash', durability: 50, enhancement: 15}
+            const fifteenPlus = fail(failedItem2)
+            //assert
+            expect(fifteenPlus).toEqual(expected) 
+        })
+        it("if enhancement is greater than 16, decrease enhancement by 1", () => {
+            const failedItem3 = {name: 'crash', durability: 60, enhancement: 18}
+            const expected = {name: 'crash', durability: 50, enhancement: 17}
+            const sixteenPlus = fail(failedItem3)
+            //assert
+            expect(sixteenPlus).toEqual(expected)
+        })
 
-    
-// })
+})
